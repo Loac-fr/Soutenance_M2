@@ -1,0 +1,20 @@
+// =======================
+// Tools/Functions
+// Thanks to @sutterlity
+// https://github.com/sutter/POPY-Starter-integration-web/blob/master/scss/tools/_fonctions.scss
+// =======================
+
+// Convert px to em
+@function pxtoem($target, $context: 16){
+    @return ($target/$context)+0em;
+}
+
+// Convert px to rem
+@function pxtorem($target, $context: 16){
+    @return ($target/$context)+0rem;
+}
+
+// Convert em to px
+@function emtopx($target, $context: 16){
+    @return ($target*$context)+0px;
+}

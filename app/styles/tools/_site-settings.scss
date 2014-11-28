@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+// ----------------------
+// == Site settings
+// ----------------------
+
+// Html 5 Element
+$audio-canvas-video: false; // True | False
+
+// Fonts
+$default-font-size: 16px;
+
+// = Colors
+// -----------------------------
+
+// Main colors
+$black:#181818;
+$white: #FDF5E6; // #FFF0F5;
+$grey: #A9A9A9;
+
+// = Grid
+// -----------------------------
+
+// Max width wrapper
+$wrapper-width: 1440px;
+
+// Default spaces / margins
+$default-space: 40px;
+$min-height: 280px;
+
+
+// = Prefix
+// -----------------------------
+
+$prefix-for-webkit:    true !default;
+$prefix-for-mozilla:   true !default;
+$prefix-for-microsoft: true !default;
+$prefix-for-opera:     true !default;
+$prefix-for-spec:      true !default; // required for keyframe mixin

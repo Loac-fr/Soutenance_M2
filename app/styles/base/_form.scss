@@ -1,0 +1,84 @@
+/* ==|====================
+   Base/Form
+   ======================= */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="search"] {
+    @include rem(font-size, 16px);
+    @include rem(line-height, 30px);
+    font-weight: 300;
+    color: #b0b0b0;
+    padding: 10px 15px;
+    border: none;
+    outline: 0;
+    border-radius: 5px;
+    background-color: #f1f2ed;
+    @include placeholder(#b0b0b0);
+}
+
+/* Base for label styling */
+input[type="checkbox"]:not(:checked),
+input[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+input[type="checkbox"]:not(:checked) + label,
+input[type="checkbox"]:checked + label {
+  @include inline-block();
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  line-height: 25px;
+}
+
+/* checkbox aspect */
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left:0; top: 0;
+  width: 25px; height: 25px;
+  border: none;
+  background: #f1f2ed;
+  border-radius: 5px;
+}
+/* checked mark aspect */
+input[type="checkbox"]:not(:checked) + label:after,
+input[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: 0; left: 4px;
+  font-size: 20px;
+  color: #09ad7e;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+input[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+input[type="checkbox"]:disabled:not(:checked) + label:before,
+input[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+input[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+input[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+input[type="checkbox"]:checked:focus + label:before,
+input[type="checkbox"]:not(:checked):focus + label:before {
+  //border: 1px solid #ddd;
+}

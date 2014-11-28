@@ -1,0 +1,50 @@
+/* ==|====================
+   Layout/Main
+   ======================= */
+
+.l-main {
+}
+
+.l-section{
+	width: 100%;
+	height: 200%;
+}
+.section-title, .section-content{
+	position:relative;
+	width:100%;
+	height:50%;
+}
+
+.title-wrapper span {
+	display:inline-block;
+	margin-top: 15px;
+}
+
+.title-wrapper, .section-content p, .section-content > ul, .slider__item_content_wrapper{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	width:33%;
+	margin:auto;
+}
+.section-content p{ width: 50%; }
+
+.slider__item_content_wrapper{
+	width:80%;
+	p{
+		position:relative;
+		top:auto;
+		transform: none;
+		width:80%;
+		margin: 15px auto;
+	}
+}
+
+@include mq($to:960px){
+	.title-wrapper, .slider__item_content_wrapper{
+		width: 66%;
+	}
+	.section-content p, .section-content > ul{
+		width: 90%;
+	}
+}

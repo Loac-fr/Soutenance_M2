@@ -1,0 +1,55 @@
+/* ==|====================
+   Module/Button
+   ======================= */
+
+
+.btn {
+    @include inline-block();
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    background: none;
+    transition: all .3s;
+    white-space:nowrap;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin btn($rounded : true) {
+    @extend .btn;
+    @if $rounded == true {
+    border-radius: 5px;
+    @include rem(line-height, 58px);
+    }
+}
+
+.btn-primary {
+    @include btn();
+    padding: 0 30px;
+    color: $white;
+    @include font('OpenSans', $weight: 700);
+    @include rem(font-size, 14px);
+    letter-spacing: 2.5px;
+    border: 1px solid $white;
+    &:hover {
+        background-color: $white;
+        color: $black;
+    }
+    i { @include rem(font-size, 24px); display:inline-block; vertical-align:middle; padding-bottom:3px;}
+}
+
+.btn-secondary {
+    @include btn();
+    @extend .btn-primary;
+    color:$black;
+    border: 1px solid $black;
+    &:hover {
+        background-color: $black;
+        color: $white;
+        border: 1px solid transparent;
+    }
+}
